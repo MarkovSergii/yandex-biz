@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>Инструмент для вытягивание данных компаний API Яндекс.Карт 2.0 и Яндекс.Справочник</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+   <script type="text/javascript" src="js/table.js"></script>
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+</head>
+<body>
+
+<table id="main_table" class="table-striped table-bordered" class="display" cellspacing="0" width="100%">
+   <thead>
+     <tr>
+        <% for (title in company[0]) { %>
+        <td> <%= title %></td>
+        <% } %>
+     </tr>
+   </thead>
+   <tbody>
+      <% _.each(company, function(item) { %>
+      <tr>
+         <% for (title in item) { %>
+         <td> <%= item[title] %></td>
+         <% } %>
+      </tr>
+      <% });%>
+   </tbody>
+</table>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

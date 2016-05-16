@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Инструмент для вытягивание данных компаний API Яндекс.Карт 2.0 и Яндекс.Справочник</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <script type="text/javascript" src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="text-center">
+        <h4>Поиск компаний по справочнику Яндекс</h4>
+    </div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+       <div><label for="api_key">Yandex API Key </label> &nbsp&nbsp&nbsp<input id="save_api" type="checkbox" checked>Сохранить API ключ<input class="form-control"  id="api_key" type="text"/></div><br>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-lg-9 col-md-9">
+            <div class="rec">
+                <div id="YMapsID"></div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <div class="left_menu">
+                <div style="font-weight: 600;"> Координаты метки:</div>
+                <div>
+                    Lat - <label id="lat"></label>
+                    Long - <label id="long"></label>
+                </div>
+                <div>
+                   <label id="z_count"></label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="obl">Область поиска:</label>
+                    <div class="form-group form-group-lg">
+                        <div class="col-sm-8" style="padding: 0px">
+                            <input class="form-control"  type="text" id="obl">
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-success " id="set_obl_btn">Set</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="control-label" for="search_text">Поисковое слово:</label>
+                    <div class="form-group form-group-lg">
+                        <div class="col-sm-12" style="padding: 0px;padding-bottom: 10px " >
+                            <input class="form-control" type="text" id="search_text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="btn_div " >
+                        <button id="btn_get_data" class="btn btn-success btn-block">Поиск данных</button>
+                </div>
+            </div>
+            <div class="result_area">
+                <div class="row text-center">
+                   <div class="col-lg-12 col-md-12" style="padding: 0">
+                       Всего найдено <span id="result_count"></span>
+                       <div>
+                           <button id="show_all" class="btn btn-info">Показать</button>
+                           <button id="save_all" class="btn btn-info">Сохранить</button>
+                       </div>
+
+                   </div>
+               </div>
+            </div>
+            <div class="result_area">
+                <div class="row text-center">
+                    <div class="col-lg-12 col-md-12" style="padding: 0">
+                        Очистить все результаты
+                        <button id="delete_all" class="btn btn-danger btn-block">Очистить</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+</body>
+</html>
